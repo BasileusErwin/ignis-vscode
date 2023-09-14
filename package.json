@@ -1,0 +1,39 @@
+{
+  "name": "ignis-vscode",
+  "version": "0.0.1",
+  "license": "MIT",
+  "displayName": "Ignis",
+  "publisher": "Ignacio Perez",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BasileusErwin/ignis-vscode"
+  },
+  "engines": {
+    "vscode": "^1.25.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "ignis",
+        "aliases": [
+          "Ignis",
+          "ignis"
+        ],
+        "extensions": [
+          ".ign"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "ignis",
+        "scopeName": "source.ignis",
+        "path": "./ignis.tmLanguage.json"
+      }
+    ]
+  }
+}

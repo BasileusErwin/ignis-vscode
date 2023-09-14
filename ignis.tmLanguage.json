@@ -1,0 +1,122 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "Ignis",
+  "scopeName": "source.ignis",
+  "fileTypes": [".ign"],
+  "patterns": [
+    {
+      "include": "#functionDefinition"
+    },
+    {
+      "include": "#comments"
+    },
+    {
+      "include": "#controlKeywords"
+    },
+    {
+      "include": "#typeKeywords"
+    },
+    {
+      "include": "#storageModifiers"
+    },
+    {
+      "include": "#strings"
+    },
+    {
+      "include": "#functionCall"
+    },
+    {
+      "include": "#numbers"
+    },
+    {
+      "include": "#operators"
+    }
+  ],
+  "repository": {
+    "comments": {
+      "patterns": [
+        {
+          "name": "comment.line.double-slash.ignis",
+          "match": "//.*"
+        },
+        {
+          "name": "comment.block.ignis",
+          "begin": "/\\*",
+          "end": "\\*/"
+        }
+      ]
+    },
+    "controlKeywords": {
+      "patterns": [
+        {
+          "name": "keyword.control.ignis",
+          "match": "\\b(if|else|while|return|for)\\b"
+        }
+      ]
+    },
+    "typeKeywords": {
+      "patterns": [
+        {
+          "name": "keyword.type.ignis",
+          "match": "\\b(int|void|string|bool)\\b"
+        }
+      ]
+    },
+    "storageModifiers": {
+      "patterns": [
+        {
+          "name": "storage.modifier.ignis",
+          "match": "\\b(let|function|class|mut)\\b"
+        }
+      ]
+    },
+    "strings": {
+      "patterns": [
+        {
+          "name": "string.quoted.double.ignis",
+          "match": "\"[^\"]*\""
+        }
+      ]
+    },
+    "functionCall": {
+      "patterns": [
+        {
+          "name": "entity.name.function.ignis",
+          "match": "\\b(\\w+)\\s*\\("
+        }
+      ]
+    },
+    "functionDefinition": {
+      "patterns": [
+        {
+          "name": "entity.name.function.ignis",
+          "match": "\\b(function)\\s+(\\w+)\\b",
+          "captures": {
+            "1": {
+              "name": "keyword.control.ignis"
+            },
+            "2": {
+              "name": "entity.name.function.ignis"
+            }
+          }
+        }
+      ]
+    },
+    "numbers": {
+      "patterns": [
+        {
+          "name": "constant.numeric.ignis",
+          "match": "\\b(\\d+)\\b"
+        }
+      ]
+    },
+    "operators": {
+      "patterns": [
+        {
+          "name": "keyword.operator.ignis",
+          "match": "\\+|\\-|\\*|\\/|%|==|!=|<=|>=|<|>|=|\\+=|\\-=|\\*=|\\/=|%=|\\?|:"
+        }
+      ]
+    }
+  }
+}
