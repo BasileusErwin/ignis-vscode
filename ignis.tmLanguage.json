@@ -30,6 +30,15 @@
     },
     {
       "include": "#operators"
+    },
+    {
+      "include": "#classDefinition"
+    },
+    {
+      "include": "#custom-types"
+    },
+    {
+      "include": "#methodCall"
     }
   ],
   "repository": {
@@ -58,7 +67,7 @@
       "patterns": [
         {
           "name": "keyword.type.ignis",
-          "match": "\\b(int|void|string|bool)\\b"
+          "match": "\\b(double|int|void|string|char|boolean)\\b"
         }
       ]
     },
@@ -66,7 +75,7 @@
       "patterns": [
         {
           "name": "storage.modifier.ignis",
-          "match": "\\b(let|function|class|mut)\\b"
+          "match": "\\b(let|function|class|mut|new|this|public|private)\\b"
         }
       ]
     },
@@ -114,7 +123,35 @@
       "patterns": [
         {
           "name": "keyword.operator.ignis",
-          "match": "\\+|\\-|\\*|\\/|%|==|!=|<=|>=|<|>|=|\\+=|\\-=|\\*=|\\/=|%=|\\?|:"
+          "match": "->|\\+|-|\\*|\\/|\\(|\\)|\\{|\\}|\\[|\\]|:|\\||&|%|\\?|==|!=|>=|<=|\\|\\||&&|\\+=|\\-=|\\="
+        }
+      ]
+    },
+    "classDefinition": {
+      "patterns": [
+        {
+          "name": "entity.name.type.class.ignis",
+          "match": "\\b(class)\\s+(\\w+)\\b",
+          "captures": {
+            "1": {
+              "name": "keyword.control.ignis"
+            },
+            "2": {
+              "name": "entity.name.type.class.ignis"
+            }
+          }
+        }
+      ]
+    },
+    "custom-types": {
+      "match": "(?<=:\\s)[A-Z][a-zA-Z0-9_]*(<([A-Z][a-zA-Z0-9_]*)(,\\s*[A-Z][a-zA-Z0-9_]*)*>)?(?=\\s*=|;)",
+      "name": "entity.name.type.custom.ignis"
+    },
+    "methodCall": {
+      "patterns": [
+        {
+          "name": "entity.name.function.ignis",
+          "match": "\\b.(\\w+)\\s*\\("
         }
       ]
     }
