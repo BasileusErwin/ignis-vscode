@@ -59,7 +59,7 @@
       "patterns": [
         {
           "name": "keyword.control.ignis",
-          "match": "\\b(if|else|while|return|for)\\b"
+          "match": "\\b(if|else|while|return|for|in)\\b"
         }
       ]
     },
